@@ -16,5 +16,5 @@ urlpatterns = [
     # Blog management URLs (optional, for doctors)
     path('create_blog/', views.create_blog, name='create_blog'),
     path('edit_blog/<int:pk>/', views.edit_blog, name='edit_blog'),  # Dynamic URL for editing specific blog
-    # path('blog/<int:pk>/', views.blog_detail, name='blog_detail'),  # Dynamic URL for viewing specific blog
+    path('blog/<int:pk>/', views.blog_detail, name='blog_detail'),  # Dynamic URL for viewing specific blog
 ]
