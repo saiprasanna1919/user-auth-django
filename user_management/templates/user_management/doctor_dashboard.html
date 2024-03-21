@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, Dr. {{ user.first_name }} {{ user.last_name }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} {{ user.zip_code }}</p>
+
+    <h2>Your Blogs</h2>
+    <ul>
+        {% for blog in blogs %}
+        <li>
+            {{ blog.title }} ({{ blog.category }})
+            {% if blog.is_draft %}
+            (Draft)
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    </body>
+</html>

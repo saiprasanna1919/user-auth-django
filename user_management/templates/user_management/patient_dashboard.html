@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} {{ user.zip_code }}</p>
+
+    <h2>Published Blogs</h2>
+    <ul>
+        {% for blog in blogs %}
+        <li>
+            <a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a> ({{ blog.category }}) - {{ blog.get_truncated_summary }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
