@@ -81,3 +81,8 @@ def logout_view(request):
 
 def edit_blog(request, pk):
     pass
+
+def blog_detail(request, pk):
+    blog = get_object_or_404(Blog, pk=pk)  # Retrieve blog by primary key
+    context = {'blog': blog}
+    return render(request, 'blog_detail.html', context)
